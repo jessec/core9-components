@@ -10,7 +10,6 @@ html, body, .container, .scroller {
 	height: 100%;
 }
 body {
-  background: #34495e;
   color: #fff;
   font-weight: 300;
   font-family: 'Lato', Calibri, Arial, sans-serif;
@@ -38,7 +37,7 @@ a:hover, a:focus {
 .container {
 	position: relative;
 	overflow: hidden;
-	background: #34495e;
+	background: transparent;
 }
 
 .menu-trigger {
