@@ -9,7 +9,23 @@
 html, body, .container, .scroller {
 	height: 100%;
 }
+body {
+  background: #34495e;
+  color: #fff;
+  font-weight: 300;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+}
 
+a {
+  text-decoration: none;
+  color: #f7f7f7;
+  outline: none;
+}
+
+a:hover, a:focus {
+  color: #fff;
+  outline: none;
+}
 .scroller {
 	overflow-y: scroll;
 }
