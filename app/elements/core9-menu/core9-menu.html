@@ -2,136 +2,146 @@
 <link rel="import" type="css" href="css/normalize.css">
 <link rel="import" type="css" href="css/icons.css">
 <link rel="import" type="css" href="css/component.css">
-<script src="js/modernizr.custom.js"></script>
-<template>
+<script src="js/modernizr.custom.js"></script> <template>
 <div class="container">
 	<!-- Push Wrapper -->
 	<div class="mp-pusher" id="mp-pusher">
+
+
 
 		<!-- mp-menu -->
 		<nav id="mp-menu" class="mp-menu">
 			<div class="mp-level">
 				<h2 class="icon icon-world">All Categories</h2>
 				<ul>
-					<li class="icon icon-arrow-left"><a class="icon icon-display" href="#">Devices</a>
+					<li class="icon icon-arrow-left"><a class="icon icon-display" on-click="handleClick"
+						href="javascript:void(0);"
+					>Devices</a>
 						<div class="mp-level">
 							<h2 class="icon icon-display">Devices</h2>
 							<ul>
-								<li class="icon icon-arrow-left"><a class="icon icon-phone" href="#">Mobile Phones</a>
+								<li class="icon icon-arrow-left"><a class="icon icon-phone" on-click="handleClick"
+									href="javascript:void(0);"
+								>Mobile Phones</a>
 									<div class="mp-level">
 										<h2>Mobile Phones</h2>
 										<ul>
-											<li><a href="#">Super Smart Phone</a></li>
-											<li><a href="#">Thin Magic Mobile</a></li>
-											<li><a href="#">Performance Crusher</a></li>
-											<li><a href="#">Futuristic Experience</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Super Smart Phone</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Thin Magic Mobile</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Performance Crusher</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Futuristic Experience</a></li>
 										</ul>
 									</div></li>
-								<li class="icon icon-arrow-left"><a class="icon icon-tv" href="#">Televisions</a>
+								<li class="icon icon-arrow-left"><a class="icon icon-tv" on-click="handleClick" href="javascript:void(0);">Televisions</a>
 									<div class="mp-level">
 										<h2>Televisions</h2>
 										<ul>
-											<li><a href="#">Flat Superscreen</a></li>
-											<li><a href="#">Gigantic LED</a></li>
-											<li><a href="#">Power Eater</a></li>
-											<li><a href="#">3D Experience</a></li>
-											<li><a href="#">Classic Comfort</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Flat Superscreen</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Gigantic LED</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Power Eater</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">3D Experience</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Classic Comfort</a></li>
 										</ul>
 									</div></li>
-								<li class="icon icon-arrow-left"><a class="icon icon-camera" href="#">Cameras</a>
+								<li class="icon icon-arrow-left"><a class="icon icon-camera" on-click="handleClick"
+									href="javascript:void(0);"
+								>Cameras</a>
 									<div class="mp-level">
 										<h2>Cameras</h2>
 										<ul>
-											<li><a href="#">Smart Shot</a></li>
-											<li><a href="#">Power Shooter</a></li>
-											<li><a href="#">Easy Photo Maker</a></li>
-											<li><a href="#">Super Pixel</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Smart Shot</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Power Shooter</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Easy Photo Maker</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Super Pixel</a></li>
 										</ul>
 									</div></li>
 							</ul>
 						</div></li>
-					<li class="icon icon-arrow-left"><a class="icon icon-news" href="#">Magazines</a>
+					<li class="icon icon-arrow-left"><a class="icon icon-news" on-click="handleClick" href="javascript:void(0);">Magazines</a>
 						<div class="mp-level">
 							<h2 class="icon icon-news">Magazines</h2>
 							<ul>
-								<li><a href="#">National Geographic</a></li>
-								<li><a href="#">Scientific American</a></li>
-								<li><a href="#">The Spectator</a></li>
-								<li><a href="#">The Rambler</a></li>
-								<li><a href="#">Physics World</a></li>
-								<li><a href="#">The New Scientist</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">National Geographic</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Scientific American</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The Spectator</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The Rambler</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Physics World</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The New Scientist</a></li>
 							</ul>
 						</div></li>
-					<li class="icon icon-arrow-left"><a class="icon icon-shop" href="#">Store</a>
+					<li class="icon icon-arrow-left"><a class="icon icon-shop" on-click="handleClick" href="javascript:void(0);">Store</a>
 						<div class="mp-level">
 							<h2 class="icon icon-shop">Store</h2>
 							<ul>
-								<li class="icon icon-arrow-left"><a class="icon icon-t-shirt" href="#">Clothes</a>
+								<li class="icon icon-arrow-left"><a class="icon icon-t-shirt" on-click="handleClick"
+									href="javascript:void(0);"
+								>Clothes</a>
 									<div class="mp-level">
 										<h2 class="icon icon-t-shirt">Clothes</h2>
 										<ul>
-											<li class="icon icon-arrow-left"><a class="icon icon-female" href="#">Women's Clothing</a>
+											<li class="icon icon-arrow-left"><a class="icon icon-female" on-click="handleClick"
+												href="javascript:void(0);"
+											>Women's Clothing</a>
 												<div class="mp-level">
 													<h2>Women's Clothing</h2>
 													<ul>
-														<li><a href="#">Tops</a></li>
-														<li><a href="#">Dresses</a></li>
-														<li><a href="#">Trousers</a></li>
-														<li><a href="#">Shoes</a></li>
-														<li><a href="#">Sale</a></li>
+														<li><a on-click="handleClick" href="javascript:void(0);">Tops</a></li>
+														<li><a on-click="handleClick" href="javascript:void(0);">Dresses</a></li>
+														<li><a on-click="handleClick" href="javascript:void(0);">Trousers</a></li>
+														<li><a on-click="handleClick" href="javascript:void(0);">Shoes</a></li>
+														<li><a on-click="handleClick" href="javascript:void(0);">Sale</a></li>
 													</ul>
 												</div></li>
-											<li class="icon icon-arrow-left"><a class="icon icon-male" href="#">Men's Clothing</a>
+											<li class="icon icon-arrow-left"><a class="icon icon-male" on-click="handleClick"
+												href="javascript:void(0);"
+											>Men's Clothing</a>
 												<div class="mp-level">
 													<h2>Men's Clothing</h2>
 													<ul>
-														<li><a href="#">Shirts</a></li>
-														<li><a href="#">Trousers</a></li>
-														<li><a href="#">Shoes</a></li>
-														<li><a href="#">Sale</a></li>
+														<li><a on-click="handleClick" href="javascript:void(0);">Shirts</a></li>
+														<li><a on-click="handleClick" href="javascript:void(0);">Trousers</a></li>
+														<li><a on-click="handleClick" href="javascript:void(0);">Shoes</a></li>
+														<li><a on-click="handleClick" href="javascript:void(0);">Sale</a></li>
 													</ul>
 												</div></li>
 										</ul>
 									</div></li>
-								<li><a class="icon icon-diamond" href="#">Jewelry</a></li>
-								<li><a class="icon icon-music" href="#">Music</a></li>
-								<li><a class="icon icon-food" href="#">Grocery</a></li>
+								<li><a class="icon icon-diamond" on-click="handleClick" href="javascript:void(0);">Jewelry</a></li>
+								<li><a class="icon icon-music" on-click="handleClick" href="javascript:void(0);">Music</a></li>
+								<li><a class="icon icon-food" on-click="handleClick" href="javascript:void(0);">Grocery</a></li>
 							</ul>
 						</div></li>
-					<li><a class="icon icon-photo" href="#">Collections</a></li>
-					<li><a class="icon icon-wallet" href="#">Credits</a></li>
+					<li><a class="icon icon-photo" on-click="handleClick" href="javascript:void(0);">Collections</a></li>
+					<li><a class="icon icon-wallet" on-click="handleClick" href="javascript:void(0);">Credits</a></li>
 				</ul>
 			</div>
 		</nav>
 		<!-- /mp-menu -->
 
 
-<a href="javascript:void(0);" id="trigger" class="menu-trigger"><span style="color:transparent;">open/close</span></a>
+		<a on-click="handleClick" href="javascript:void(0);" id="trigger" class="menu-trigger"><span
+			style="color: transparent;"
+		>open/close</span></a>
 
+  <content></content>
 
 	</div>
 	<!-- /pusher -->
+
 </div>
-<!-- /container -->
-
-
-
-</template>
-
-<script src="js/classie.js"></script>
-<script src="js/mlpushmenu.js"></script>
-<!-- <script> // loading in main document
+<!-- /container --> </template> <script src="js/classie.js"></script> <script src="js/mlpushmenu.js"></script> <!-- <script> // loading in main document
   new mlPushMenu(document.getElementById('mp-menu'), document
       .getElementById('trigger'));
-</script> -->
-
-</dom-module>
+</script> --> </dom-module>
 
 
 
 
 <script>
 	Polymer({
-		is : "core9-menu"
+		is : "core9-menu",
+		handleClick : function(event) {
+			console.log(event.target);
+		}
 	});
 </script>

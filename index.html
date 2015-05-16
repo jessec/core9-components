@@ -27,8 +27,11 @@ html, body {
 
 
 
-<iframe id="content" src="http://example.com/" style="border: 0; position:fixed; margin-top:40px; margin-bottom:-40px; top:0; left:0; right:0; bottom:0; width:100%; height:100%; z-index:1;"></iframe>
-<core9-menu id="menu" style="z-index:0"></core9-menu>
+<iframe id="content" src="http://example.com/" style="border: 0; position:fixed; margin-top:38px; margin-bottom:-38px; top:0; left:0; right:0; bottom:0; width:100%; height:100%; z-index:1;"></iframe>
+<core9-menu id="menu" style="z-index:0">
+<div id="workspace" style="width:100%; height:100%;background-color: red;  margin-top: 20px;">test</div>
+</core9-menu>
+
 
 	<script>
 		new mlPushMenu(document.getElementById('mp-menu'), document
@@ -58,6 +61,7 @@ html, body {
         .getElementById('mp-pusher').addEventListener("click", function(){
             toggleMenu();
         });
+
 
 
 	</script>
