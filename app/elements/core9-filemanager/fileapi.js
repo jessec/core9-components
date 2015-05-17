@@ -1,9 +1,11 @@
-function generateRandom() {
-    return Math.random();
-}
+File = {
 
-function sum(a, b) {
-    return a + b;
-}
+		config : function(config){
 
-export { generateRandom, sum }
+		}
+
+};
+
+
+
+export { File }

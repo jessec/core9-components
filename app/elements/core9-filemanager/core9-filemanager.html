@@ -1,22 +1,33 @@
 <dom-module id="core9-filemanager">
 <link rel="stylesheet" href="core9-filemanager.css">
-  <template>
-
-  </template>
-</dom-module>
+<template> </template> </dom-module>
 
 
 <script>
 
+	function multiImport(modules) {
+		return Promise.all(modules.map(function(m) {
+			return System.import(m)
+		}))
+	}
+	multiImport(
+			[ '../../bower_components/rip/src/RIP',
+					'app/elements/core9-filemanager/fileapi' ]).then(
+			function(modules) {
 
-  Polymer({
+				var RIP = modules[0];
+				var FILE = modules[1];
 
-    is: 'core9-filemanager',
+				Polymer({
+					is : 'core9-filemanager',
+					ready : function() {
+						File.config({
+							server : 'http://localhost:8080/',
+							db : ''
+						});
+						console.log(File);
+					}
+				});
 
-    ready: function() {
-
-    }
-
-  });
-
+			})
 </script>
