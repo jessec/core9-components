@@ -21,9 +21,7 @@ html, body {
   font-family: sans-serif;
   z-index: 0;
 }
-
 </style>
-
 </head>
 <body fullbleed>
 
@@ -40,6 +38,14 @@ html, body {
 
 
   <script>
+
+
+
+  document
+      .getElementById('trigger').addEventListener("click", function(){
+          toggleMenu();
+      });
+
 
     new mlPushMenu(document.getElementById('mp-menu'), document
         .getElementById('trigger'));
@@ -58,12 +64,6 @@ html, body {
               content.style.zIndex = "0";
             }
     }
-
-
-    document
-        .getElementById('trigger').addEventListener("click", function(){
-            toggleMenu();
-        });
 
   </script>
 </body>
