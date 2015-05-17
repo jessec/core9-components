@@ -4,20 +4,21 @@
 <title>unquote</title>
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
+<script src="bower_components/es6-shim/es6-shim.min.js">
 
 </script>
 <script>
-	//window.Polymer = window.Polymer || {};
-	//window.Polymer.dom = 'shadow';
+  //window.Polymer = window.Polymer || {};
+  //window.Polymer.dom = 'shadow';
 </script>
 <link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="app/elements/elements.html">
 <style>
 html, body {
-	height: 100%;
-	margin: 0;
-	background-color: #34495e;
-	font-family: sans-serif;
+  height: 100%;
+  margin: 0;
+  background-color: #34495e;
+  font-family: sans-serif;
   z-index: 0;
 }
 
@@ -29,41 +30,37 @@ html, body {
 
 <iframe id="content" src="http://example.com/" style="border: 0; position:fixed; margin-top:38px; margin-bottom:-38px; top:0; left:0; right:0; bottom:0; width:100%; height:100%; z-index:1;"></iframe>
 <core9-menu id="menu" style="z-index:0">
-<div id="workspace" style="width:100%; height:100%;background-color: red;  margin-top: 20px;">test</div>
+  <div id="workspace" style="width:100%; height:100%;background-color: red;  margin-top: 20px;">
+    <core9-filemanager>Robert</core9-filemanager>
+  </div>
 </core9-menu>
 
 
-	<script>
-		new mlPushMenu(document.getElementById('mp-menu'), document
-				.getElementById('trigger'));
+  <script>
+    new mlPushMenu(document.getElementById('mp-menu'), document
+        .getElementById('trigger'));
 
 
-		toggleMenu = function(){
-			      var trigger = document.getElementById('trigger');
-	          var content = document.getElementById("content");
-	          var menu = document.getElementById("menu");
-	          console.log(content.style.zIndex);
-	          if(menu.style.zIndex == 9){
-	            menu.style.zIndex = "0";
-	            content.style.zIndex = "9";
-	          }else{
-	        	  menu.style.zIndex = "9";
-	            content.style.zIndex = "0";
-	          }
-		}
+    toggleMenu = function(){
+            var trigger = document.getElementById('trigger');
+            var content = document.getElementById("content");
+            var menu = document.getElementById("menu");
+            console.log(content.style.zIndex);
+            if(menu.style.zIndex == 9){
+              menu.style.zIndex = "0";
+              content.style.zIndex = "9";
+            }else{
+              menu.style.zIndex = "9";
+              content.style.zIndex = "0";
+            }
+    }
 
 
- 		document
+    document
         .getElementById('trigger').addEventListener("click", function(){
-        	  toggleMenu();
-        });
-/*  	    document
-        .getElementById('mp-pusher').addEventListener("click", function(){
             toggleMenu();
-        }); */
+        });
 
-
-
-	</script>
+  </script>
 </body>
 </html>

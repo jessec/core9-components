@@ -14,7 +14,8 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.9.0"
+    "polymer": "Polymer/polymer#^0.9.0",
+    "es6-shim": "~0.31.2"
   },
   "resolutions": {
     "polymer": "^0.9.0",
