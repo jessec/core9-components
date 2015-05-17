@@ -3,10 +3,13 @@
 <head>
 <title>unquote</title>
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
-<script src="bower_components/es6-shim/es6-shim.min.js">
+<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+<script src="bower_components/es6-shim/es6-shim.min.js"></script>
 
-</script>
+<!-- <script src="bower_components/traceur/traceur.min.js"></script>
+<script src="bower_components/es6-module-loader/dist/es6-module-loader.js"></script> -->
+<script src="bower_components/systemjs/dist/system.js"></script>
+
 <script>
   //window.Polymer = window.Polymer || {};
   //window.Polymer.dom = 'shadow';
@@ -23,6 +26,7 @@ html, body {
 }
 
 </style>
+
 </head>
 <body fullbleed>
 
@@ -35,8 +39,20 @@ html, body {
   </div>
 </core9-menu>
 
+<script type="module" src="app/elements/core9-filemanager/fileapi.js"></script>
+
+<script type="module">
+import { generateRandom, sum } from 'app/elements/core9-filemanager/fileapi';
+
+alert("test");
+console.log(generateRandom()); //logs a random number
+console.log(sum(1, 2)); //3
+
+</script>
+
 
   <script>
+
     new mlPushMenu(document.getElementById('mp-menu'), document
         .getElementById('trigger'));
 
