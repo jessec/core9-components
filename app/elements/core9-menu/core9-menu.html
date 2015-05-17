@@ -19,13 +19,13 @@
 				<h2 class="icon icon-world">All Categories</h2>
 				<ul>
 					<li class="icon icon-arrow-left"><a class="icon icon-display" on-click="handleClick"
-						href="javascript:void(0);"
+						href="devices"
 					>Devices</a>
 						<div class="mp-level">
 							<h2 class="icon icon-display">Devices</h2>
 							<ul>
 								<li class="icon icon-arrow-left"><a class="icon icon-phone" on-click="handleClick"
-									href="javascript:void(0);"
+									href="devices/mobile-phones"
 								>Mobile Phones</a>
 									<div class="mp-level">
 										<h2>Mobile Phones</h2>
@@ -146,6 +146,11 @@
 		is : "core9-menu",
 		handleClick : function(event) {
 			console.log(event.target);
+			console.log(event.target.text);
+			var page = event.target.getAttribute("href").replace('app/elements/core9-menu/','');
+			history.pushState(null, null, page);
+			event.preventDefault();
+			return false;
 		}
 	});
 </script>
