@@ -37,7 +37,7 @@ a:hover, a:focus {
 .container {
 	position: relative;
 	overflow: hidden;
-	background: transparent;
+	background: #34495e;
 }
 
 .menu-trigger {
