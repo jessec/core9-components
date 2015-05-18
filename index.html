@@ -6,7 +6,6 @@
 <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 <script src="bower_components/es6-shim/es6-shim.min.js"></script>
 <script src="bower_components/systemjs/dist/system.js"></script>
-<script src="bower_components/grapnel/dist/grapnel.min.js"></script>
 
 <script>
 	//window.Polymer = window.Polymer || {};
@@ -74,33 +73,6 @@ html, body {
 				content.style.zIndex = "0";
 			}
 		}
-
-
-		var routes = {
-			    '/' : function(req, e){
-			        console.log(req);
-			    },
-			    '/core9-components/' : function(req, e){
-		            console.log(req);
-		      },
-			    '/core9-components/:id' : function(req, e){
-			    	console.log(req);
-			    },
-			    '/core9-components/:category/:id' : function(req, e){
-			    	console.log(req);
-			    },
-			    '/*' : function(req, e){
-			        if(!e.parent()){
-			        	console.log(req);
-			        }
-			    }
-			}
-
-
-
-	      console.log('Grapnel log : ');
-	      Grapnel.listen({ pushState : true }, routes);
-
 
 
 	</script>
