@@ -137,15 +137,24 @@
 
 
 <script>
+
+window.onbeforeunload = function(event) {
+    console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+  };
+
 	Polymer({
 		is : "core9-menu",
 		handleClick : function(event) {
 			console.log(event.target);
 			console.log(event.target.text);
-			var page = event.target.getAttribute("href").replace('app/elements/core9-menu/','');
+			var url = event.target.getAttribute("href");
+			if(url == null) return false;
+			var page = url.replace('app/elements/core9-menu/','');
 			history.pushState(null, null, page);
 			event.preventDefault();
 			return false;
 		}
 	});
+
+
 </script>
