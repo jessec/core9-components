@@ -19,7 +19,8 @@
     "traceur": "~0.0.89",
     "es6-module-loader": "ModuleLoader/es6-module-loader#~0.16.6",
     "systemjs": "systemjs/systemjs#~0.16.11",
-    "restful.js": "~0.6.1"
+    "restful.js": "~0.6.1",
+    "director": "~1.2.8"
   },
   "resolutions": {
     "polymer": "^0.9.0",
