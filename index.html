@@ -64,7 +64,6 @@ html, body {
 				function() {
 					toggleMenu();
 				});
-
 		new mlPushMenu(document.getElementById('mp-menu'), document
 				.getElementById('trigger'));
 
@@ -81,6 +80,12 @@ html, body {
 			}
 		}
 
+		window.addEventListener('urlchange', function(e) {
+		      console.log("url changed");
+			    console.log(e);
+			    console.log(e.detail);
+			    console.log(location);
+			  }, false);
 
 	</script>
 </body>
