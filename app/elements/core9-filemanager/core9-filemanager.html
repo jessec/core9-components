@@ -35,7 +35,7 @@
 					'app/elements/core9-filemanager/fileapi' ]).then(
 			function(modules) {
 
-				console.log(modules);
+
 
 				var restful = modules[0];
 				var FILE = unwrapModule(modules[1]);
@@ -49,7 +49,7 @@
 							collection : 'files',
 							rest : restful
 						});
-						console.log(FILE.collectionExists());
+						//console.log(FILE.collectionExists());
 					}
 				});
 

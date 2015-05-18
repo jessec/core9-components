@@ -15,10 +15,10 @@ File = {
 		var api = this.rest('localhost').port(8080);
 
 		api.one('core9-backend/files', 1).get().then(function(response) {
-			  console.log(response);
+			  //console.log(response);
 		}, function(response) {
 		    // The reponse code is not >= 200 and < 400
-		    console.log(response);
+		    //console.log(response);
 		    //throw new Error('Invalid response');
 		});
 	}

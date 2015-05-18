@@ -139,10 +139,10 @@
 <script>
 
 window.addEventListener('urlchange', function(e) {
-    console.log("url changed");
+/*     console.log("url changed");
     console.log(e);
     console.log(e.detail);
-    console.log(location);
+    console.log(location); */
   }, false);
 
 
@@ -150,8 +150,6 @@ window.addEventListener('urlchange', function(e) {
 	Polymer({
 		is : "core9-menu",
 		handleClick : function(event) {
-			console.log(event.target);
-			console.log(event.target.text);
 			var url = event.target.getAttribute("href");
 			if(url == null) return false;
 			var page = url.replace('app/elements/core9-menu/','');
