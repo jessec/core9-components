@@ -31,6 +31,8 @@ html, body {
 					state : state
 				});
 			}
+			var test = arguments[2];
+			if(arguments[2] == 'javascript:void(0);')return false;
 			window.dispatchEvent(new CustomEvent('urlchange', { 'detail': 'some data' }));
 			return pushState.apply(history, arguments);
 		}
