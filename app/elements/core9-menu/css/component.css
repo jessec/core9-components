@@ -92,7 +92,7 @@ a:hover, a:focus {
 .mp-level::before {
 	content: '';
 	position: absolute;
-	top: 0;
+	_top: 0;
 	right: 0;
 	width: 0;
 	height: 0;
