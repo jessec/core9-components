@@ -42,8 +42,8 @@
 		'/products\/edit\/(.*)/' : function() {
 			console.log('products', arguments);
 		},
-		'/devices\/(.*)\/' : function(req) {
-			console.log('devices', arguments);
+		'/files$/' : function(req) {
+			console.log('files', arguments);
 			Core9.workspace.appendChild(document
 					.createElement("core9-filemanager"));
 		},
