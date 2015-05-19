@@ -25,7 +25,7 @@ html, body {
 }
 </style>
 <script type="text/javascript">
-	// configuration
+
 	Router.config({
 		root : '/core9-components/',
 		mode : 'history'
@@ -37,14 +37,17 @@ html, body {
 		},
 		'/products\/(.*)\/edit\/(.*)/' : function(req) {
 			console.log('products', arguments);
+		},
+		'default' :function() {
+			console.log('hitting default...');
 		}
 	}
 
-	Router.addRoutes(routes);
+	Router.addRoutes(routes).listen();
 
-	Router.add(function() {
+/* 	Router.add(function() {
 		console.log('hitting default...');
-	}).listen();
+	}).listen(); */
 
 	history.pushState(null, null, "products/edit/test");
 </script>

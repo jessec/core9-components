@@ -107,8 +107,14 @@ var Router = {
 		for ( var key in routes) {
 			if (routes.hasOwnProperty(key)) {
 				var indexKey = key.substring(0, key.length - 1);
-				Router.add(indexKey, routes[key]);
+				if(indexKey == 'defaul'){
+					Router.add(routes[key]);
+				}else{
+					Router.add(indexKey, routes[key]);
+				}
+				
 			}
 		}
+		return this;
 	}
 }
