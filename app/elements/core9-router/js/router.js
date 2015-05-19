@@ -1,3 +1,21 @@
+(function(history) {
+	var pushState = history.pushState;
+	history.pushState = function(state) {
+		if (typeof history.onpushstate == "function") {
+			history.onpushstate({
+				state : state
+			});
+		}
+		var test = arguments[2];
+		if (arguments[2] == 'javascript:void(0);')
+			return false;
+		window.dispatchEvent(new CustomEvent('urlchange', {
+			'detail' : 'some data'
+		}));
+		return pushState.apply(history, arguments);
+	}
+})(window.history);
+
 var Router = {
 	routes : [],
 	mode : null,
