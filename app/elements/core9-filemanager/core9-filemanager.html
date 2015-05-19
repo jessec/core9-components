@@ -7,13 +7,43 @@
 <style>
 :host {
       display: block;
-      border: 1px solid grey;
+      border: 0px solid grey;
       height:100%;
       width:96%;
     }
 </style>
 <template>
 <div>
+
+<table class="footable" data-page-size="5">
+                <thead>
+                <tr>
+                    <th>
+                        First Name
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Isidra</td>
+                </tr>
+                <tr>
+                    <td>Shona</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td>
+                        <div class="pagination pagination-centered"></div>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+
+<br /><br /><br />
+
+
+
 <table class="footable" data-page-size="5">
                 <thead>
                 <tr>
