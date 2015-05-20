@@ -2,8 +2,7 @@
 <html>
 <head>
 <title>unquote</title>
-<meta name="viewport"
-	content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 <script src="bower_components/es6-shim/es6-shim.min.js"></script>
 <script src="bower_components/systemjs/dist/system.js"></script>
@@ -35,20 +34,24 @@
 		mode : 'history'
 	});
 	var routes = {
+		'/home$/' : function() {
+			console.log('home', arguments);
+			Core9.cleanWorkspace();
+			Core9.iframeContent.style.marginTop = "38px";
+		  Core9.iframeContent.style.left = "0px";
+			Core9.iframePlaceholder.appendChild(Core9.iframeContent);
+		},
 		'/devices$/' : function() {
 			console.log('hitting device...');
 			Core9.cleanWorkspace();
 			Core9.iframeContent.style.marginTop = "0px";
 			Core9.iframeContent.style.left = "-300px";
-      Core9.workspace.appendChild(Core9.iframeContent);
-
-
+			Core9.workspace.appendChild(Core9.iframeContent);
 		},
 		'/forms$/' : function() {
 			console.log('forms', arguments);
 			Core9.cleanWorkspace();
-			Core9.workspace.appendChild(document
-					.createElement("core9-grid"));
+			Core9.workspace.appendChild(document.createElement("core9-grid"));
 		},
 		'/files$/' : function(req) {
 			console.log('files', arguments);
@@ -68,8 +71,10 @@
 </script>
 </head>
 <body fullbleed>
+	<div id="iframe-placeholder">
+		<iframe id="content" src="/core9-components/bower_components/gridmanager.js/demo/tinymce.html"></iframe>
+	</div>
 
-	<iframe id="content" src="/core9-components/bower_components/gridmanager.js/demo/tinymce.html"></iframe>
 	<core9-menu id="menu">
 	<div id="workspace">
 		<!-- <core9-filemanager> </core9-filemanager> -->
@@ -79,6 +84,7 @@
 	<script src="/core9-components/init.js"></script>
 	<script>
 		Core9.workspace = document.getElementById('workspace');
+		Core9.iframePlaceholder = document.getElementById('iframe-placeholder');
 		Core9.iframeContent = document.getElementById('content');
 	</script>
 </body>
