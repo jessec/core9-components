@@ -1,0 +1,27 @@
+{
+	"name": "widgrid",
+	"title": "Widgrid",
+	"description": "Droppable grid for draggable widget.",
+	"version": "1.0.0",
+	"dependencies": {
+		"jquery": ">=1.10.2"
+	},
+	"keywords": [
+		"grid",
+		"widget",
+		"drag",
+		"drop",
+		"ui"
+	],
+	"author": {
+		"name": "Alexandre PIEL",
+		"email": "alexandre.piel@gmail.com"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://www.opensource.org/licenses/mit-license.php"
+		}
+	],
+	"demo": "http://alexparadise.com/widgrid/demo.html"
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="widgrid.js"></script>
+        <style type="text/css">
+            #grid-container{
+                width: 700px;
+                height: 1100px;
+                border: 1px solid #005A9C;
+            }
+            .widgrid-drop.widgrid-valid-drop{
+                border: 1px solid #AA0000;
+            }
+            .widgrid-drop{
+                border: 1px dotted #CCC;
+                margin: 5px;
+            }
+            .widget{
+                padding: 15px 25px;
+                margin: 10px;
+                border: 2px solid #B24926;
+                background: #FFF6E8;
+                float: left;
+            }
+            #grid-container .widget{
+                padding: 0;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Widgrid</h1>
+        <h2>widget grid example</h2>
+        <div id="grid-container"></div>
+        <div class="widget">Widget A</div>
+        <div class="widget" id="widget-b">Widget B</div>
+        <div class="widget">Widget C</div>
+        <div class="widget">Widget D</div>
+        <div class="widget">Widget E</div>
+        
+        <script>
+        $(function () {
+            $( ".widget" ).draggable({ 
+                revert: "invalid",
+                zIndex: 100,
+                helper: "clone",
+                opacity: .75,
+            });   
+
+            $('#grid-container').Widgrid({ 
+                widgets: [{ widget: $('#widget-b'), position: { row: 1, col: 2}, dimension: { rows: 1, cols: 3 } }],
+                columns: 18,
+                rows: 25,
+                addWidget: function(widget) {
+                    var clone = widget;
+                    if (!widget.data('parent')) {
+                        clone = widget.data('clone');
+                        if (!clone) {
+                            clone = widget.clone();
+                            widget.data('clone', clone);
+                            clone.data('parent', widget);
+                            clone.data('dimension', widget.data('dimension'));
+                            widget.hide();
+                        }
+                    }
+                    return clone;                
+                },
+                removeWidget: function(widget) {
+                    widget.data('parent').show();
+                    widget.data('parent').data('clone', null);
+                    return widget; 
+                },
+            });
+        });
+        </script>
+    </body>
+</html>
