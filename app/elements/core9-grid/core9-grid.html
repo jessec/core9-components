@@ -1,0 +1,51 @@
+<dom-module id="core9-grid">
+<link rel="stylesheet" href="core9-grid.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script> 
+<style>
+:host {
+	display: block;
+	border: 0px solid grey;
+	height: 100%;
+	width: 96%;
+}
+</style>
+<template>
+<div>
+	<content></content>
+</div>
+</template> </dom-module>
+
+
+<script>
+	function unwrapModule(mod) {
+		for (key in mod) {
+			if (mod.hasOwnProperty(key)) {
+				var value = mod[key];
+				return value;
+			}
+		}
+	}
+
+	function multiImport(modules) {
+		return Promise.all(modules.map(function(m) {
+			return System.import(m)
+		}))
+	}
+
+	multiImport(
+			[ '../../bower_components/restful.js/dist/restful.min',
+					'app/elements/core9-grid/fileapi' ])
+			.then(
+					function(modules) {
+
+						var restful = modules[0];
+						var FILE = unwrapModule(modules[1]);
+
+						Polymer({
+							is : 'core9-grid',
+							ready : function() {}
+								
+						});
+
+					})
+</script>
