@@ -42,9 +42,12 @@
 		'/forms$/' : function() {
 			console.log('forms', arguments);
 			Core9.cleanWorkspace();
+			Core9.workspace.appendChild(document
+					.createElement("core9-grid"));
 		},
 		'/files$/' : function(req) {
 			console.log('files', arguments);
+			Core9.cleanWorkspace();
 			Core9.workspace.appendChild(document
 					.createElement("core9-filemanager"));
 		},
@@ -61,7 +64,7 @@
 </head>
 <body fullbleed>
 
-	<iframe id="content" src="http://example.com/"></iframe>
+	<iframe id="content" src="/core9-components/bower_components/gridmanager.js/demo/tinymce.html"></iframe>
 	<core9-menu id="menu">
 	<div id="workspace">
 		<!-- <core9-filemanager> </core9-filemanager> -->
