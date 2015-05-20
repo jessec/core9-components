@@ -41,9 +41,12 @@ a:hover, a:focus {
 }
 
 .menu-trigger {
-	position: relative;
-	padding-left: 60px;
-	font-size: 0.9em;
+  position: relative;
+  height: 30px;
+  display: inline-block;
+  _background-color: aliceblue;
+  margin-bottom: -15px;
+  width: 40px;
 }
 
 .menu-trigger:before {

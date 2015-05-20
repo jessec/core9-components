@@ -38,6 +38,11 @@
 		'/devices$/' : function() {
 			console.log('hitting device...');
 			Core9.cleanWorkspace();
+			Core9.iframeContent.style.marginTop = "0px";
+			Core9.iframeContent.style.left = "-300px";
+      Core9.workspace.appendChild(Core9.iframeContent);
+
+
 		},
 		'/forms$/' : function() {
 			console.log('forms', arguments);
@@ -74,6 +79,7 @@
 	<script src="/core9-components/init.js"></script>
 	<script>
 		Core9.workspace = document.getElementById('workspace');
+		Core9.iframeContent = document.getElementById('content');
 	</script>
 </body>
 </html>

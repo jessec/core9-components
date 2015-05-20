@@ -2,7 +2,7 @@
 <link rel="import" type="css" href="css/normalize.css">
 <link rel="import" type="css" href="css/icons.css">
 <link rel="import" type="css" href="css/component.css">
-<script src="js/modernizr.custom.js"></script> 
+<script src="js/modernizr.custom.js"></script>
 <style>
 
 
@@ -18,14 +18,14 @@
 }​
 
 
- 
+
 </style>
 
 <template>
 <div class="menu-container">
 
-	<a on-click="handleClick" href="javascript:void(0);" id="trigger"
-		class="menu-trigger"><span style="color: transparent;">open/close</span></a>
+	<a on-click="handleClick" data-nav="home" href="home" id="trigger"
+		class="menu-trigger"><span style="color: transparent;">.</span></a>
 	<!-- Push Wrapper -->
 	<div class="mp-pusher" id="mp-pusher">
 
@@ -273,6 +273,10 @@
 	Polymer({
 		is : "core9-menu",
 		handleClick : function(event) {
+			console.log("click : ");
+			console.log(event);
+			var data = event.target.dataset.nav;
+			console.log(data);
 			var url = event.target.getAttribute("href");
 			if (url == null)
 				return false;
