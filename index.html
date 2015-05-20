@@ -39,8 +39,9 @@
 			console.log('hitting device...');
 			Core9.cleanWorkspace();
 		},
-		'/products\/edit\/(.*)/' : function() {
-			console.log('products', arguments);
+		'/forms$/' : function() {
+			console.log('forms', arguments);
+			Core9.cleanWorkspace();
 		},
 		'/files$/' : function(req) {
 			console.log('files', arguments);

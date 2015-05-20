@@ -2,121 +2,246 @@
 <link rel="import" type="css" href="css/normalize.css">
 <link rel="import" type="css" href="css/icons.css">
 <link rel="import" type="css" href="css/component.css">
-<script src="js/modernizr.custom.js"></script> <template>
+<script src="js/modernizr.custom.js"></script> 
+<style>
+
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-button {
+    background: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+}​
+
+
+ 
+</style>
+
+<template>
 <div class="container">
 
-    <a on-click="handleClick" href="javascript:void(0);" id="trigger" class="menu-trigger"><span
-      style="color: transparent;"
-    >open/close</span></a>
+	<a on-click="handleClick" href="javascript:void(0);" id="trigger"
+		class="menu-trigger"><span style="color: transparent;">open/close</span></a>
 	<!-- Push Wrapper -->
 	<div class="mp-pusher" id="mp-pusher">
 
-  <content></content>
+		<content></content>
 
 		<!-- mp-menu -->
 		<nav id="mp-menu" class="mp-menu">
 			<div class="mp-level">
 				<h2 class="icon icon-world">All Categories</h2>
 				<ul>
-					<li class="icon icon-arrow-left"><a class="icon icon-display" on-click="handleClick"
-						href="devices"
-					>Devices</a>
+					<li class="icon icon-arrow-left"><a class="icon icon-display"
+						on-click="handleClick" href="devices">Devices</a>
 						<div class="mp-level">
 							<h2 class="icon icon-display">Devices</h2>
 							<ul>
-								<li class="icon icon-arrow-left"><a class="icon icon-phone" on-click="handleClick"
-									href="devices/mobile-phones"
-								>Mobile Phones</a>
+								<li class="icon icon-arrow-left"><a class="icon icon-phone"
+									on-click="handleClick" href="devices/mobile-phones">Mobile
+										Phones</a>
 									<div class="mp-level">
 										<h2>Mobile Phones</h2>
 										<ul>
-											<li><a on-click="handleClick" href="javascript:void(0);">Super Smart Phone</a></li>
-											<li><a on-click="handleClick" href="javascript:void(0);">Thin Magic Mobile</a></li>
-											<li><a on-click="handleClick" href="javascript:void(0);">Performance Crusher</a></li>
-											<li><a on-click="handleClick" href="javascript:void(0);">Futuristic Experience</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Super
+													Smart Phone</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Thin
+													Magic Mobile</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Performance
+													Crusher</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Futuristic
+													Experience</a></li>
 										</ul>
 									</div></li>
-								<li class="icon icon-arrow-left"><a class="icon icon-tv" on-click="handleClick" href="javascript:void(0);">Televisions</a>
+								<li class="icon icon-arrow-left"><a class="icon icon-tv"
+									on-click="handleClick" href="javascript:void(0);">Televisions</a>
 									<div class="mp-level">
 										<h2>Televisions</h2>
 										<ul>
-											<li><a on-click="handleClick" href="javascript:void(0);">Flat Superscreen</a></li>
-											<li><a on-click="handleClick" href="javascript:void(0);">Gigantic LED</a></li>
-											<li><a on-click="handleClick" href="javascript:void(0);">Power Eater</a></li>
-											<li><a on-click="handleClick" href="javascript:void(0);">3D Experience</a></li>
-											<li><a on-click="handleClick" href="javascript:void(0);">Classic Comfort</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Flat
+													Superscreen</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Gigantic
+													LED</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Power
+													Eater</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">3D
+													Experience</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Classic
+													Comfort</a></li>
 										</ul>
 									</div></li>
-								<li class="icon icon-arrow-left"><a class="icon icon-camera" on-click="handleClick"
-									href="javascript:void(0);"
-								>Cameras</a>
+								<li class="icon icon-arrow-left"><a
+									class="icon icon-camera" on-click="handleClick"
+									href="javascript:void(0);">Cameras</a>
 									<div class="mp-level">
 										<h2>Cameras</h2>
 										<ul>
-											<li><a on-click="handleClick" href="javascript:void(0);">Smart Shot</a></li>
-											<li><a on-click="handleClick" href="javascript:void(0);">Power Shooter</a></li>
-											<li><a on-click="handleClick" href="javascript:void(0);">Easy Photo Maker</a></li>
-											<li><a on-click="handleClick" href="javascript:void(0);">Super Pixel</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Smart
+													Shot</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Power
+													Shooter</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Easy
+													Photo Maker</a></li>
+											<li><a on-click="handleClick" href="javascript:void(0);">Super
+													Pixel</a></li>
 										</ul>
 									</div></li>
 							</ul>
 						</div></li>
-					<li class="icon icon-arrow-left"><a class="icon icon-news" on-click="handleClick" href="javascript:void(0);">Magazines</a>
+					<li class="icon icon-arrow-left"><a class="icon icon-news"
+						on-click="handleClick" href="forms">Forms</a>
 						<div class="mp-level">
-							<h2 class="icon icon-news">Magazines</h2>
-							<ul>
-								<li><a on-click="handleClick" href="javascript:void(0);">National Geographic</a></li>
-								<li><a on-click="handleClick" href="javascript:void(0);">Scientific American</a></li>
-								<li><a on-click="handleClick" href="javascript:void(0);">The Spectator</a></li>
-								<li><a on-click="handleClick" href="javascript:void(0);">The Rambler</a></li>
-								<li><a on-click="handleClick" href="javascript:void(0);">Physics World</a></li>
-								<li><a on-click="handleClick" href="javascript:void(0);">The New Scientist</a></li>
+							<h2 class="icon icon-news">Forms</h2>
+							<ul style="direction: rtl;overflow-y:scroll;height:calc(100% - 140px);">
+								<li><a on-click="handleClick" href="javascript:void(0);">National
+										Geographic</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Scientific
+										American</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Spectator</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Rambler</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Physics
+										World</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										New Scientist</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">National
+										Geographic</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Scientific
+										American</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Spectator</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Rambler</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Physics
+										World</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										New Scientist</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">National
+										Geographic</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Scientific
+										American</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Spectator</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Rambler</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Physics
+										World</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										New Scientist</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">National
+										Geographic</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Scientific
+										American</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Spectator</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Rambler</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Physics
+										World</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										New Scientist</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">National
+										Geographic</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Scientific
+										American</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Spectator</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Rambler</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Physics
+										World</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										New Scientist</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">National
+										Geographic</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Scientific
+										American</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Spectator</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Rambler</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Physics
+										World</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										New Scientist</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">National
+										Geographic</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Scientific
+										American</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Spectator</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										Rambler</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">Physics
+										World</a></li>
+								<li><a on-click="handleClick" href="javascript:void(0);">The
+										New Scientist</a></li>
 							</ul>
 						</div></li>
-					<li class="icon icon-arrow-left"><a class="icon icon-shop" on-click="handleClick" href="javascript:void(0);">Store</a>
+					<li class="icon icon-arrow-left"><a class="icon icon-shop"
+						on-click="handleClick" href="javascript:void(0);">Store</a>
 						<div class="mp-level">
 							<h2 class="icon icon-shop">Store</h2>
 							<ul>
-								<li class="icon icon-arrow-left"><a class="icon icon-t-shirt" on-click="handleClick"
-									href="javascript:void(0);"
-								>Clothes</a>
+								<li class="icon icon-arrow-left"><a
+									class="icon icon-t-shirt" on-click="handleClick"
+									href="javascript:void(0);">Clothes</a>
 									<div class="mp-level">
 										<h2 class="icon icon-t-shirt">Clothes</h2>
 										<ul>
-											<li class="icon icon-arrow-left"><a class="icon icon-female" on-click="handleClick"
-												href="javascript:void(0);"
-											>Women's Clothing</a>
+											<li class="icon icon-arrow-left"><a
+												class="icon icon-female" on-click="handleClick"
+												href="javascript:void(0);">Women's Clothing</a>
 												<div class="mp-level">
 													<h2>Women's Clothing</h2>
 													<ul>
-														<li><a on-click="handleClick" href="javascript:void(0);">Tops</a></li>
-														<li><a on-click="handleClick" href="javascript:void(0);">Dresses</a></li>
-														<li><a on-click="handleClick" href="javascript:void(0);">Trousers</a></li>
-														<li><a on-click="handleClick" href="javascript:void(0);">Shoes</a></li>
-														<li><a on-click="handleClick" href="javascript:void(0);">Sale</a></li>
+														<li><a on-click="handleClick"
+															href="javascript:void(0);">Tops</a></li>
+														<li><a on-click="handleClick"
+															href="javascript:void(0);">Dresses</a></li>
+														<li><a on-click="handleClick"
+															href="javascript:void(0);">Trousers</a></li>
+														<li><a on-click="handleClick"
+															href="javascript:void(0);">Shoes</a></li>
+														<li><a on-click="handleClick"
+															href="javascript:void(0);">Sale</a></li>
 													</ul>
 												</div></li>
-											<li class="icon icon-arrow-left"><a class="icon icon-male" on-click="handleClick"
-												href="javascript:void(0);"
-											>Men's Clothing</a>
+											<li class="icon icon-arrow-left"><a
+												class="icon icon-male" on-click="handleClick"
+												href="javascript:void(0);">Men's Clothing</a>
 												<div class="mp-level">
 													<h2>Men's Clothing</h2>
 													<ul>
-														<li><a on-click="handleClick" href="javascript:void(0);">Shirts</a></li>
-														<li><a on-click="handleClick" href="javascript:void(0);">Trousers</a></li>
-														<li><a on-click="handleClick" href="javascript:void(0);">Shoes</a></li>
-														<li><a on-click="handleClick" href="javascript:void(0);">Sale</a></li>
+														<li><a on-click="handleClick"
+															href="javascript:void(0);">Shirts</a></li>
+														<li><a on-click="handleClick"
+															href="javascript:void(0);">Trousers</a></li>
+														<li><a on-click="handleClick"
+															href="javascript:void(0);">Shoes</a></li>
+														<li><a on-click="handleClick"
+															href="javascript:void(0);">Sale</a></li>
 													</ul>
 												</div></li>
 										</ul>
 									</div></li>
-								<li><a class="icon icon-diamond" on-click="handleClick" href="javascript:void(0);">Jewelry</a></li>
-								<li><a class="icon icon-music" on-click="handleClick" href="javascript:void(0);">Music</a></li>
-								<li><a class="icon icon-food" on-click="handleClick" href="javascript:void(0);">Grocery</a></li>
+								<li><a class="icon icon-diamond" on-click="handleClick"
+									href="javascript:void(0);">Jewelry</a></li>
+								<li><a class="icon icon-music" on-click="handleClick"
+									href="javascript:void(0);">Music</a></li>
+								<li><a class="icon icon-food" on-click="handleClick"
+									href="javascript:void(0);">Grocery</a></li>
 							</ul>
 						</div></li>
-					<li><a class="icon icon-photo" on-click="handleClick" href="files">Files</a></li>
-					<li><a class="icon icon-wallet" on-click="handleClick" href="settings">Settings</a></li>
+					<li><a class="icon icon-photo" on-click="handleClick"
+						href="files">Files</a></li>
+					<li><a class="icon icon-wallet" on-click="handleClick"
+						href="settings">Settings</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -128,7 +253,8 @@
 	<!-- /pusher -->
 
 </div>
-<!-- /container --> </template> <script src="js/classie.js"></script> <script src="js/mlpushmenu.js"></script> <!-- <script> // loading in main document
+<!-- /container --> </template> <script src="js/classie.js"></script> <script
+	src="js/mlpushmenu.js"></script> <!-- <script> // loading in main document
   new mlPushMenu(document.getElementById('mp-menu'), document
       .getElementById('trigger'));
 </script> --> </dom-module>
@@ -137,27 +263,23 @@
 
 
 <script>
-
-window.addEventListener('urlchange', function(e) {
-/*     console.log("url changed");
-    console.log(e);
-    console.log(e.detail);
-    console.log(location); */
-  }, false);
-
-
+	window.addEventListener('urlchange', function(e) {
+		/*     console.log("url changed");
+		 console.log(e);
+		 console.log(e.detail);
+		 console.log(location); */
+	}, false);
 
 	Polymer({
 		is : "core9-menu",
 		handleClick : function(event) {
 			var url = event.target.getAttribute("href");
-			if(url == null) return false;
-			var page = url.replace('app/elements/core9-menu/','');
+			if (url == null)
+				return false;
+			var page = url.replace('app/elements/core9-menu/', '');
 			history.pushState(null, null, page);
 			event.preventDefault();
 			return false;
 		}
 	});
-
-
 </script>
