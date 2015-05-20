@@ -1,0 +1,23 @@
+{
+  "name": "gridmanager",
+  "version": "0.3.1",
+  "devDependencies": {
+    "qunit": "~1.12.0",
+    "ckeditor": "~4.4.3",
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.2.0",
+    "foundation": "~5.3.1",
+    "jquery-ui": "~1.11.0"
+  },
+  "homepage": "https://github.com/neokoenig/jQuery-gridmanager",
+  "_release": "0.3.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.1",
+    "commit": "9aefade61f3c6b4d56a70c3d47add92dfb05d204"
+  },
+  "_source": "git://github.com/neokoenig/jQuery-gridmanager.git",
+  "_target": "~0.3.1",
+  "_originalSource": "gridmanager.js",
+  "_direct": true
+}
