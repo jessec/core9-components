@@ -14,7 +14,58 @@
 }
 </style>
 <template>
+
+
+
+
 <div>
+
+
+
+    <!-- Using Custom Elements -->
+    <core9-filedrop url="/storage/server/path" maxfilesize="524288" allowedmimetypes="image/jpeg,image/png">
+        <div>
+            Hey, drop some file at me!
+        </div>
+        <div>
+            <a href="javascript:" id="aSelectFile">Or select file from your computer!</a>
+        </div>
+    </core9-filedrop>
+
+    <!-- Handling its events -->
+    <script>
+        (function () {
+            var filedrop = document.querySelector("core9-filedrop");
+
+            // Upload started
+            filedrop.addEventListener("fileUploading", function (ev) {
+                console.log("Uploading started", ev.detail);
+            });
+
+            // File successfully uploaded
+            filedrop.addEventListener("fileUploaded", function (ev) {
+                alert("File uploaded, and saved as `" + ev.detail.name + "`\n" + "See console for details.");
+                console.info("File uploaded, and saved as ", ev.detail.name, ev.detail);
+            });
+            // Upload failed
+            filedrop.addEventListener("fileUploadError", function (ev) {
+                console.warn("Upload error! ", ev.detail);
+            });
+
+            filedrop.addEventListener("fileSelectError", function (ev) {
+                console.warn("Select file error!", ev.detail.message);
+            });
+
+            document.getElementById("aSelectFile").addEventListener("click", function () {
+                filedrop.openFile();
+            });
+        }());
+    </script>
+
+
+
+
+
 
 	<p>
 		Search: <input id="filter" type="text" /> Status: <select id="filterstatus" class="filter-status">
