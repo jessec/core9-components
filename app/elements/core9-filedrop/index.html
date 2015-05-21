@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>&lt;juicy-filedrop&gt;</title>
+        <!-- Importing Web Component's Polyfill -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.0/webcomponents.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/github-markdown-css/0.2.0/github-markdown.min.css">
+    <!-- Importing Custom Elements -->
+    <link rel="import" href="juicy-filedrop.html" />
+    <style>
+        juicy-filedrop {
+            width: calc( 100% - 2em );
+            display: block;
+            padding: 1em;
+            margin: 1em;
+            min-height: 2em;
+            font-size: 2em;
+            text-align: center;
+            color: rgb(170, 170, 170);
+            border: 1px solid black;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    </style>
+
+
+
+    <!-- Loading mock file host/server - needed only for demo -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/sinon.js/1.7.3/sinon.js"></script>
+    <script src="test/mockServer.js"></script>
+</head>
+<body class="markdown-body">
+
+    <!-- Using Custom Elements -->
+    <juicy-filedrop url="/storage/server/path" maxfilesize="524288" allowedmimetypes="image/jpeg,image/png">
+        <div>
+            Hey, drop some file at me!
+        </div>
+        <div>
+            <a href="javascript:" id="aSelectFile">Or select file from your computer!</a>
+        </div>
+    </juicy-filedrop>
+
+    <!-- Handling its events -->
+    <script>
+        (function () {
+            var filedrop = document.querySelector("juicy-filedrop");
+
+            // Upload started
+            filedrop.addEventListener("fileUploading", function (ev) {
+                console.log("Uploading started", ev.detail);
+            });
+
+            // File successfully uploaded
+            filedrop.addEventListener("fileUploaded", function (ev) {
+                alert("File uploaded, and saved as `" + ev.detail.name + "`\n" + "See console for details.");
+                console.info("File uploaded, and saved as ", ev.detail.name, ev.detail);
+            });
+            // Upload failed
+            filedrop.addEventListener("fileUploadError", function (ev) {
+                console.warn("Upload error! ", ev.detail);
+            });
+
+            filedrop.addEventListener("fileSelectError", function (ev) {
+                console.warn("Select file error!", ev.detail.message);
+            });
+
+            document.getElementById("aSelectFile").addEventListener("click", function () {
+                filedrop.openFile();
+            });
+        }());
+    </script>
+
+</body>
+</html>
