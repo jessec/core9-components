@@ -104,8 +104,7 @@ input[type=file] {
                     postMedia.headers[customheader] = that.fileToJson(this.xFile);
                     postMedia.xFile = this.xFile;
                     postMedia.body = event.target.result;
-                    console.log(postMedia);
-                    postMedia.go();
+                    postMedia.generateRequest();
                 };
 
                 reader.xFile = { type: file.type, name: file.name };
