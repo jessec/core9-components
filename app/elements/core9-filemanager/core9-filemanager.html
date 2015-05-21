@@ -201,7 +201,7 @@ core9-filedrop, core9-filedrop a {
 					function(modules) {
 
 						//var restful = modules[0];
-						var FILE = Core9.unwrapModule(modules[1]);
+						var FILE = Core9.unwrapModule(modules[0]);
 
 						Polymer({
 							is : 'core9-filemanager',
@@ -213,7 +213,7 @@ core9-filedrop, core9-filedrop a {
 									//rest : restful
 								});
 								//console.log(FILE.collectionExists());
-
+                console.log(FILE);
 								var table2 = this.$.table2;
 								var statusFilter = this.$.filterstatus;
 								var filter = this.$.filter;
