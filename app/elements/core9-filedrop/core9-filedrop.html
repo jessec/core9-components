@@ -3,7 +3,7 @@ Copyright 2015 Smörgåsbord Development. All rights reserved.
 -->
 <!-- <link rel="import" href="../../../bower_components/polymer/polymer.html" /> -->
 <link rel="import"
-	href="../../../bower_components/core-ajax/core-ajax.html" />
+	href="../../../bower_components/iron-ajax/iron-ajax.html" />
 <dom-module id="core9-filedrop"
 	attributes="url customheader value maxfilesize allowedmimetypes">
 <style>
@@ -19,9 +19,12 @@ input[type=file] {
 	display: none;
 }
 </style>
-<template> <core-ajax id="postMedia" method="POST"
+<template> 
+
+
+<iron-ajax id="postMedia" method="POST"
 	url="{{url}}" on-core-response="{{handleResponse}}"
-	on-core-error="{{handleError}}"></core-ajax> <input type="file"
+	on-core-error="{{handleError}}"></iron-ajax> <input type="file"
 	id="txtUploadFile" /> <content id="content"></content> </template> </dom-module>
 
 
@@ -90,6 +93,7 @@ input[type=file] {
             },
             readData: function (file) {
                 var postMedia = this.$.postMedia;
+                console.log(postMedia);
                 var customheader = this.customheader;
                 var reader = new FileReader();
                 var that = this;
@@ -100,6 +104,7 @@ input[type=file] {
                     postMedia.headers[customheader] = that.fileToJson(this.xFile);
                     postMedia.xFile = this.xFile;
                     postMedia.body = event.target.result;
+                    console.log(postMedia);
                     postMedia.go();
                 };
 
@@ -190,7 +195,7 @@ input[type=file] {
                             postMedia.headers[customheader] = that.fileToJson(this.xFile);
                             postMedia.body = event.target.result;
                             postMedia.xFile = this.xFile;
-                            postMedia.go();
+                            postMedia.generateRequest();
                         };
 
                         reader.xFile = { type: file.type, name: file.name }

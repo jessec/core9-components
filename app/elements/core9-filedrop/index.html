@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>&lt;juicy-filedrop&gt;</title>
+    <title>&lt;core9-filedrop&gt;</title>
         <!-- Importing Web Component's Polyfill -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.0/webcomponents.min.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/github-markdown-css/0.2.0/github-markdown.min.css">
     <!-- Importing Custom Elements -->
-    <link rel="import" href="juicy-filedrop.html" />
+    <link rel="import" href="core9-filedrop.html" />
     <style>
-        juicy-filedrop {
+        core9-filedrop {
             width: calc( 100% - 2em );
             display: block;
             padding: 1em;
@@ -33,19 +33,19 @@
 <body class="markdown-body">
 
     <!-- Using Custom Elements -->
-    <juicy-filedrop url="/storage/server/path" maxfilesize="524288" allowedmimetypes="image/jpeg,image/png">
+    <core9-filedrop url="/storage/server/path" maxfilesize="524288" allowedmimetypes="image/jpeg,image/png">
         <div>
             Hey, drop some file at me!
         </div>
         <div>
             <a href="javascript:" id="aSelectFile">Or select file from your computer!</a>
         </div>
-    </juicy-filedrop>
+    </core9-filedrop>
 
     <!-- Handling its events -->
     <script>
         (function () {
-            var filedrop = document.querySelector("juicy-filedrop");
+            var filedrop = document.querySelector("core9-filedrop");
 
             // Upload started
             filedrop.addEventListener("fileUploading", function (ev) {
