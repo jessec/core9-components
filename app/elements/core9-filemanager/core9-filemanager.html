@@ -194,29 +194,16 @@ core9-filedrop, core9-filedrop a {
 </script>
 
 <script>
-	function unwrapModule(mod) {
-		for (key in mod) {
-			if (mod.hasOwnProperty(key)) {
-				var value = mod[key];
-				return value;
-			}
-		}
-	}
 
-	function multiImport(modules) {
-		return Promise.all(modules.map(function(m) {
-			return System.import(m)
-		}))
-	}
 
-	multiImport(
+	Core9.multiImport(
 			[ '../../bower_components/restful.js/dist/restful.min',
 					'app/elements/core9-filemanager/fileapi' ])
 			.then(
 					function(modules) {
 
 						var restful = modules[0];
-						var FILE = unwrapModule(modules[1]);
+						var FILE = Core9.unwrapModule(modules[1]);
 
 						Polymer({
 							is : 'core9-filemanager',

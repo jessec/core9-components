@@ -11,10 +11,7 @@
 	//window.Polymer = window.Polymer || {};
 	//window.Polymer.dom = 'shadow';
 </script>
-<link rel="import" href="bower_components/polymer/polymer.html">
-<link rel="import" href="app/elements/elements.html">
-<link rel="stylesheet" href="style.css">
-<script type="text/javascript">
+<script>
 	Core9 = {
 		workspace : {},
 		cleanWorkspace : function() {
@@ -27,8 +24,26 @@
 				}
 
 			}
+		},
+		unwrapModule : function(mod) {
+			for (key in mod) {
+				if (mod.hasOwnProperty(key)) {
+					var value = mod[key];
+					return value;
+				}
+			}
+		},
+		multiImport : function(modules) {
+			return Promise.all(modules.map(function(m) {
+				return System.import(m)
+			}))
 		}
 	};
+</script>
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="app/elements/elements.html">
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript">
 	Router.config({
 		root : '/core9-components/',
 		mode : 'history'
@@ -38,7 +53,7 @@
 			console.log('home', arguments);
 			Core9.cleanWorkspace();
 			Core9.iframeContent.style.marginTop = "38px";
-		  Core9.iframeContent.style.left = "0px";
+			Core9.iframeContent.style.left = "0px";
 			Core9.iframePlaceholder.appendChild(Core9.iframeContent);
 		},
 		'/devices$/' : function() {
@@ -76,9 +91,7 @@
 	</div>
 
 	<core9-menu id="menu">
-	<div id="workspace">
-		<!-- <core9-filemanager> </core9-filemanager> -->
-	</div>
+	<div id="workspace"></div>
 	</core9-menu>
 
 	<script src="/core9-components/init.js"></script>
