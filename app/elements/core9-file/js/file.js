@@ -1,3 +1,5 @@
+import {restful} from "../../../../bower_components/restful.js/dist/restful.min";
+
 File = {
 	server : {},
 	db : {},
@@ -9,7 +11,7 @@ File = {
 		this.db = config.db;
 		this.collection = config.collection;
 		this.collectionUrl = config.server + config.db + config.collection;
-		this.rest = config.rest;
+		this.rest = restful;
 	},
 	collectionExists : function(){
 		var api = this.rest('localhost').port(8080);

@@ -196,13 +196,11 @@ core9-filedrop, core9-filedrop a {
 <script>
 
 
-	Core9.multiImport(
-			[ '../../bower_components/restful.js/dist/restful.min',
-					'app/elements/core9-file/js/file' ])
+	Core9.multiImport([ 'app/elements/core9-file/js/file' ])
 			.then(
 					function(modules) {
 
-						var restful = modules[0];
+						//var restful = modules[0];
 						var FILE = Core9.unwrapModule(modules[1]);
 
 						Polymer({
@@ -211,8 +209,8 @@ core9-filedrop, core9-filedrop a {
 								FILE.config({
 									server : 'http://localhost:8080/',
 									db : 'core9-backend',
-									collection : 'files',
-									rest : restful
+									collection : 'files'
+									//rest : restful
 								});
 								//console.log(FILE.collectionExists());
 
