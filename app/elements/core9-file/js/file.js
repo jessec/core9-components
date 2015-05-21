@@ -1,21 +1,24 @@
 File = {
 	server : {},
+	port : {},
 	db : {},
 	collection : {},
 	collectionUrl : {},
 	config : function(config) {
-		this.server = config.server;
-		this.db = config.db;
-		this.collection = config.collection;
-		this.collectionUrl = config.server + config.db + config.collection;
+		console.log(config.server);
+		File.server = config.server;
+		File.port = config.port;
+		File.db = config.db;
+		File.collection = config.collection;
+		File.collectionUrl = config.db + config.collection;
 	},
 	collectionExists : function() {
 		System.import('../../../../bower_components/restful.js/dist/restful.min').then(function(m) {
 			console.log('import ...');
 			console.log(m);
-			var api = m('localhost', 8080);
+			var api = m(File.server, File.port);
 			console.log(api);
-			api.one('core9-backend/files', 1).get().then(function(response) {
+			api.one(File.collectionUrl, 1).get().then(function(response) {
 				console.log(response);
 			}, function(response) {
 				// The reponse code is not >= 200 and < 400

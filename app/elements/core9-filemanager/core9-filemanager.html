@@ -207,10 +207,10 @@ core9-filedrop, core9-filedrop a {
 							is : 'core9-filemanager',
 							ready : function() {
 								FILE.config({
-									server : 'http://localhost:8080/',
+									server : 'http://localhost',
+									port : 8080,
 									db : 'core9-backend',
 									collection : 'files'
-									//rest : restful
 								});
 								console.log(FILE.collectionExists());
                 console.log(FILE);
