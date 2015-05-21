@@ -2,30 +2,33 @@
 Copyright 2015 Smörgåsbord Development. All rights reserved.
 -->
 <!-- <link rel="import" href="../../../bower_components/polymer/polymer.html" /> -->
-<link rel="import" href="../../../bower_components/core-ajax/core-ajax.html" />
+<link rel="import"
+	href="../../../bower_components/core-ajax/core-ajax.html" />
+<dom-module id="core9-filedrop"
+	attributes="url customheader value maxfilesize allowedmimetypes">
+<style>
+:host {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
 
-<polymer-element name="juicy-filedrop" attributes="url customheader value maxfilesize allowedmimetypes">
-    <template>
-        <style>
-            :host {
-                display: -webkit-box;
-                display: -moz-box;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                display: flex;
-            }
+input[type=file] {
+	display: none;
+}
+</style>
+<template> <core-ajax id="postMedia" method="POST"
+	url="{{url}}" on-core-response="{{handleResponse}}"
+	on-core-error="{{handleError}}"></core-ajax> <input type="file"
+	id="txtUploadFile" /> <content id="content"></content> </template> </dom-module>
 
-            input[type=file] {
-                display:none;
-            }
-        </style>
-        <core-ajax id="postMedia" method="POST" url="{{url}}" on-core-response="{{handleResponse}}" on-core-error="{{handleError}}"></core-ajax>
-        <input type="file" id="txtUploadFile" />
-        <content id="content"></content>
-    </template>
-    <script>
+
+<script>
         "use strict";
-        Polymer('juicy-filedrop', {
+        Polymer({
+        	is : 'core9-filedrop',
             url: "",
             customheader: "x-file",
             ready: function () {
@@ -216,4 +219,3 @@ Copyright 2015 Smörgåsbord Development. All rights reserved.
             }
         });
     </script>
-</polymer-element>

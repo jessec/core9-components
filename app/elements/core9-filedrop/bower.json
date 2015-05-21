@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "polymer": "polymer/polymer",
-    "core-ajax": "polymer/core-ajax",
+    "iron-ajax": "PolymerElements/iron-ajax",
     "webcomponentsjs": "~0.7.0"
   }
 }
