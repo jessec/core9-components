@@ -84,14 +84,25 @@ core9-filedrop, core9-filedrop a {
 
 
 
-	<p>
-		Search: <input id="filter" type="text" /> Status: <select id="filterstatus" class="filter-status">
+
+<div class="input-field col s5">
+	 <input id="filter" type="text" />
+		<label>Search:</label>
+</div>
+		<div class="input-field col s5">
+		 <select id="filterstatus" class="filter-status">
 			<option></option>
 			<option value="active">Active</option>
 			<option value="disabled">Disabled</option>
 			<option value="suspended">Suspended</option>
 		</select>
-	</p>
+		<label>Status:</label>
+		</div>
+<script>
+$(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
 
 	<table id="table2" class="table" data-filter="#filter" data-filter-minimum="3" data-filter-timeout="500"
 		data-filter-text-only="true" data-page-size="5"
