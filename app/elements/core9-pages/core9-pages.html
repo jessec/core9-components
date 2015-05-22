@@ -24,9 +24,26 @@
 			<option value="disabled">Disabled</option>
 			<option value="suspended">Suspended</option>
 		</select>
+
+		<a href="#add" class="btn btn-info add-row">Add New Row</a>
+
 	</p>
 
+<script>
+$('.add-row').click(function(e) {
+    e.preventDefault();
 
+    //get the footable object
+    var footable = $(table2).data('footable');
+
+    //build up the row we are wanting to add
+    var newRow = '<tr><td>Isidra</td><td><a href="#">Boudreaux</a></td><td>Traffic Court Referee</td><td data-value="78025368997">22 Jun 1972</td><td data-value="1"><span class="status-metro status-active" title="Active">Active</span></td><td><a class="row-delete" href="#"><span class="glyphicon glyphicon-remove">x</span></a></td></tr>';
+
+    //add it
+    footable.appendRow(newRow);
+});
+
+</script>
 
 
 
@@ -41,6 +58,7 @@
 				<th data-hide="phone,tablet">Job Title</th>
 				<th data-hide="phone,tablet">DOB</th>
 				<th data-hide="phone">Status</th>
+        <th data-hide="phone">Delete</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -51,17 +69,32 @@
 				<td>Traffic Court Referee</td>
 				<td data-value="78025368997">22 Jun 1972</td>
 				<td data-value="1"><span class="status-metro status-active" title="Active">Active</span></td>
+				<td><a class="row-delete" href="#"><span class="glyphicon glyphicon-remove">x</span></a></td>
 			</tr>
     	</template>
 		</tbody>
 		<tfoot>
 			<tr>
-				<td colspan="5">
+				<td colspan="6">
 					<div class="pagination pagination-centered"></div>
 				</td>
 			</tr>
 		</tfoot>
 	</table>
+
+	<script>
+	$('table').footable().on('click', '.row-delete', function(e) {
+	    e.preventDefault();
+	    //get the footable object
+	    var footable = $('table').data('footable');
+
+	    //get the row we are wanting to delete
+	    var row = $(this).parents('tr:first');
+
+	    //delete the row
+	    footable.removeRow(row);
+	});
+	</script>
 	<content></content>
 </div>
 </template> </dom-module>
@@ -163,6 +196,9 @@ var forceRedraw = function(element){
 										filter : $(this).val()
 									});
 								});
+
+
+
 
 
 								setTimeout(function(){ $('.footable-sort-indicator').trigger('click'); }, 100);

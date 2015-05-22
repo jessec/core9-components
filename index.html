@@ -67,12 +67,17 @@
 			console.log('settings/setup', arguments);
 			Core9.cleanWorkspace();
 			Core9.workspace.appendChild(document.createElement("core9-setup"));
-		},		
+		},
 		'/forms$/' : function() {
 			console.log('forms', arguments);
 			Core9.cleanWorkspace();
 			Core9.workspace.appendChild(Core9.grid);
 		},
+	  '/pages$/' : function(req) {
+	        console.log('files', arguments);
+	        Core9.cleanWorkspace();
+	        Core9.workspace.appendChild(document.createElement("core9-pages"));
+	  },
 		'/files$/' : function(req) {
 			console.log('files', arguments);
 			Core9.cleanWorkspace();
@@ -106,6 +111,7 @@
 		Core9.grid = document.createElement("core9-grid");
 		Core9.fileManager = document.createElement("core9-filemanager");
 		Core9.setup = document.createElement("core9-setup");
+		Core9.pages = document.createElement("core9-pages");
 	</script>
 </body>
 </html>
