@@ -66,7 +66,7 @@
 		'/settings/setup$/' : function() {
 			console.log('settings/setup', arguments);
 			Core9.cleanWorkspace();
-			Core9.workspace.appendChild(Core9.setup);
+			Core9.workspace.appendChild(document.createElement("core9-setup"));
 		},		
 		'/forms$/' : function() {
 			console.log('forms', arguments);

@@ -67,7 +67,21 @@
 </template> </dom-module>
 
 <script type="text/javascript">
+var forceRedraw = function(element){
 
+    if (!element) { return; }
+
+    var n = document.createTextNode(' ');
+    var disp = element.style.display;  // don't worry about previous display style
+
+    element.appendChild(n);
+    element.style.display = 'none';
+
+    setTimeout(function(){
+        element.style.display = disp;
+        n.parentNode.removeChild(n);
+    },20); // you can play with this timeout to make it as short as possible
+}
 </script>
 
 <script>
@@ -83,13 +97,7 @@
 						Polymer({
 							is : 'core9-setup',
 							ready : function() {
-								FILE.config({
-									server : 'localhost',
-									port : 8080,
-									db : 'core9-backend',
-									collection : 'files'
-								});
-
+								
 								this.checks = [
 								                  {first: 'Bob', last: 'Smith'},
 								                  {first: 'Sally', last: 'Johnson'},
@@ -103,10 +111,21 @@
 								                  {first: 'Sally', last: 'Johnson'}
 								              ];
 								
+								FILE.config({
+									server : 'localhost',
+									port : 8080,
+									db : 'core9-backend',
+									collection : 'files'
+								});
+
+
+								
 								var table2 = this.$.table2;
 								var statusFilter = this.$.filterstatus;
 								var filter = this.$.filter;
 
+								
+								
 								$(table2)
 										.footable({
 											breakpoints : {
@@ -145,6 +164,8 @@
 									});
 								});
 
+
+								
 							}
 						});
 
