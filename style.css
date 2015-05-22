@@ -24,7 +24,8 @@ iframe#content {
 #workspace {
 	width: 100%;
 	height: 90%;
-	background-color: #2E547B;
+	_background-color: #2E547B;
+	background-color:#fff;
 	margin-top: 20px;
 	_padding: 50px;
 	_padding-bottom: 100px;
@@ -34,4 +35,12 @@ iframe#content {
 
 #menu {
 	z-index: 0;
+}
+
+.footable>tfoot .pagination ul>li.active>a {
+  border-color: transparent;
+}
+
+select {
+  display: block;
 }

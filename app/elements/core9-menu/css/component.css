@@ -299,3 +299,8 @@ a:hover, a:focus {
 .no-js .mp-menu > .mp-level {
 	display: block;
 }
+
+nav ul li {
+	float:none;
+	line-height: 30px;
+}
