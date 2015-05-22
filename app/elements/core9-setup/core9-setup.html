@@ -165,8 +165,11 @@ var forceRedraw = function(element){
 								});
 
 
-								setTimeout(function(){ $('.footable-sort-indicator').trigger('click'); }, 100);
-
+				                  try {
+				                      setTimeout(function(){ $('.footable-sort-indicator').trigger('click'); }, 100);
+				                  } catch (e) {
+				                    // TODO: handle exception
+				                  }
 							}
 						});
 

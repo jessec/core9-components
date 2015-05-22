@@ -22,7 +22,8 @@
     "restful.js": "~0.6.1",
     "footable": "~2.0.3",
     "gridmanager.js": "~0.3.1",
-    "iron-ajax": "PolymerElements/iron-ajax#~0.9.5"
+    "iron-ajax": "PolymerElements/iron-ajax#~0.9.5",
+    "materialize": "~0.96.1"
   },
   "resolutions": {
     "polymer": "^0.9.0",

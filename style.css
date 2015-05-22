@@ -26,10 +26,10 @@ iframe#content {
 	height: 90%;
 	background-color: #2E547B;
 	margin-top: 20px;
-	padding: 50px;
-	padding-bottom: 100px;
-	width: calc(100% - 400px);
-	height: calc(100% - 140px);
+	_padding: 50px;
+	_padding-bottom: 100px;
+	width: calc(100% - 300px);
+	height: calc(100% - 0px);
 }
 
 #menu {
