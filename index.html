@@ -63,16 +63,20 @@
 			Core9.iframeContent.style.left = "-300px";
 			Core9.workspace.appendChild(Core9.iframeContent);
 		},
+		'/settings/setup$/' : function() {
+			console.log('settings/setup', arguments);
+			Core9.cleanWorkspace();
+			Core9.workspace.appendChild(Core9.fileManager);
+		},		
 		'/forms$/' : function() {
 			console.log('forms', arguments);
 			Core9.cleanWorkspace();
-			Core9.workspace.appendChild(document.createElement("core9-grid"));
+			Core9.workspace.appendChild(Core9.grid);
 		},
 		'/files$/' : function(req) {
 			console.log('files', arguments);
 			Core9.cleanWorkspace();
-			Core9.workspace.appendChild(document
-					.createElement("core9-filemanager"));
+			Core9.workspace.appendChild(Core9.fileManager);
 		},
 		'default' : function() {
 			console.log('hitting default...');
@@ -99,6 +103,8 @@
 		Core9.workspace = document.getElementById('workspace');
 		Core9.iframePlaceholder = document.getElementById('iframe-placeholder');
 		Core9.iframeContent = document.getElementById('content');
+		Core9.grid = document.createElement("core9-grid");
+		Core9.fileManager = document.createElement("core9-filemanager");
 	</script>
 </body>
 </html>
