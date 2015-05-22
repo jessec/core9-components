@@ -26,6 +26,11 @@
 		</select>
 	</p>
 
+
+
+
+
+
 	<table id="table2" class="table" data-filter="#filter" data-filter-minimum="3" data-filter-timeout="500"
 		data-filter-text-only="true" data-page-size="5"
 	>
@@ -39,13 +44,15 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>Isidra</td>
-				<td><a href="#">Boudreaux</a></td>
+		<template is="dom-repeat" items="{{checks}}">
+        	<tr>
+				<td>{{item.first}}</td>
+				<td><a href="#">{{item.last}}</a></td>
 				<td>Traffic Court Referee</td>
 				<td data-value="78025368997">22 Jun 1972</td>
 				<td data-value="1"><span class="status-metro status-active" title="Active">Active</span></td>
 			</tr>
+    	</template>
 		</tbody>
 		<tfoot>
 			<tr>
@@ -83,6 +90,19 @@
 									collection : 'files'
 								});
 
+								this.checks = [
+								                  {first: 'Bob', last: 'Smith'},
+								                  {first: 'Sally', last: 'Johnson'},
+								                  {first: 'Sally', last: 'Johnson'},
+								                  {first: 'Sally', last: 'Johnson'},
+								                  {first: 'Sally', last: 'Johnson'},
+								                  {first: 'Sally', last: 'Johnson'},
+								                  {first: 'Sally', last: 'Johnson'},
+								                  {first: 'Sally', last: 'Johnson'},
+								                  {first: 'Sally', last: 'Johnson'},
+								                  {first: 'Sally', last: 'Johnson'}
+								              ];
+								
 								var table2 = this.$.table2;
 								var statusFilter = this.$.filterstatus;
 								var filter = this.$.filter;
