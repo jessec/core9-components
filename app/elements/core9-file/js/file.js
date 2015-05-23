@@ -11,6 +11,9 @@ File = {
 		File.collection = config.collection;
 		File.collectionUrl = config.db + config.collection;
 	},
+	check : function(){
+		return "OK";
+	},
 	collectionExists : function() {
 		System.import('../../../../bower_components/restful.js/dist/restful.min').then(function(m) {
 			//console.log('import ...');
